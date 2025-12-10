@@ -23,10 +23,23 @@ int main()
     return 0;
 }
 
-// Çàãëóøêè
-vector<string> readLines(const string&) 
+// Ã‡Ã Ã£Ã«Ã³Ã¸ÃªÃ¨
+vector<string> readLines(const string& path) 
 {
-    return {};
+    ifstream in(path);
+    vector<string> lines;
+
+    if (!in.is_open()) 
+    {
+        return lines;
+    }
+
+    string s;
+    while (getline(in, s)) 
+    {
+        lines.push_back(s);
+    }
+    return lines;
 }
 
 void printLines(const vector<string>& lines) 
