@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include<fstream>
+#include <fstream>
 
 using namespace std;
 vector<string> readLines(const string& path);
