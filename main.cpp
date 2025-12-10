@@ -3,7 +3,6 @@
 #include <string>
 #include <fstream>
 
-
 using namespace std;
 vector<string> readLines(const string& path);
 
@@ -24,7 +23,7 @@ int main()
     return 0;
 }
 
-// Заглушки
+// Г‡Г ГЈГ«ГіГёГЄГЁ
 vector<string> readLines(const string& path) 
 {
     ifstream in(path);
@@ -43,12 +42,19 @@ vector<string> readLines(const string& path)
     return lines;
 }
 
-void printLines(const vector<string>&) 
+void printLines(const vector<string>& lines) 
 {
-
+    for (const auto& s : lines) 
+    {
+        cout << s << '\n';
+    }
 }
 
-void writeLines(const vector<string>&, const string&) 
+void writeLines(const vector<string>& lines, const string& path) 
 {
-
+    ofstream out(path);
+    for (const auto& s : lines) 
+    {
+        out << s << '\n';
+    }
 }
