@@ -1,6 +1,39 @@
 #include <iostream>
+#include <vector>
+#include <string>
 
-int main() {
-    std::cout << "Hello world!\n";
+using namespace std;
+vector<string> readLines(const string& path);
+
+void printLines(const vector<string>& lines);
+
+void writeLines(const vector<string>& lines, const string& path);
+
+int main() 
+{
+    const string inputPath = "input.txt";
+    const string outputPath = "output.txt";
+
+    auto lines = readLines(inputPath);
+    printLines(lines);
+    writeLines(lines, outputPath);
+
+    cout << "Done.\n";
     return 0;
+}
+
+// Заглушки
+vector<string> readLines(const string&) 
+{
+    return {};
+}
+
+void printLines(const vector<string>&) 
+{
+
+}
+
+void writeLines(const vector<string>&, const string&) 
+{
+
 }
