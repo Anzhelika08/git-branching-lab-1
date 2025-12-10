@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include<fstream>
 
 using namespace std;
 vector<string> readLines(const string& path);
@@ -28,9 +29,10 @@ vector<string> readLines(const string&)
     return {};
 }
 
-void printLines(const vector<string>&) 
-{
-
+void printLines(const vector<string>& lines) {
+    for (const auto& s : lines) {
+        cout << s << '\n';
+    }
 }
 
 void writeLines(const vector<string>&, const string&) 
