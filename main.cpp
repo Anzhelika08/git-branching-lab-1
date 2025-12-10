@@ -29,13 +29,19 @@ vector<string> readLines(const string&)
     return {};
 }
 
-void printLines(const vector<string>& lines) {
-    for (const auto& s : lines) {
+void printLines(const vector<string>& lines) 
+{
+    for (const auto& s : lines) 
+    {
         cout << s << '\n';
     }
 }
 
-void writeLines(const vector<string>&, const string&) 
+void writeLines(const vector<string>& lines, const string& path) 
 {
-
+    ofstream out(path);
+    for (const auto& s : lines) 
+    {
+        out << s << '\n';
+    }
 }
