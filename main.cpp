@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <fstream>
 
 using namespace std;
 vector<string> readLines(const string& path);
@@ -23,9 +24,22 @@ int main()
 }
 
 // Заглушки
-vector<string> readLines(const string&) 
+vector<string> readLines(const string& path) 
 {
-    return {};
+    ifstream in(path);
+    vector<string> lines;
+
+    if (!in.is_open()) 
+    {
+        return lines;
+    }
+
+    string s;
+    while (getline(in, s)) 
+    {
+        lines.push_back(s);
+    }
+    return lines;
 }
 
 void printLines(const vector<string>&) 
